@@ -42,14 +42,14 @@ public class Main {
 		}
 		URLClassLoader ucl = new URLClassLoader(jars);
 		
-		String decoratorName = sequence.get(sequence.size() - 1).split("\\.")[0].concat("Decorator");
+		String decoratorName = sequence.get(sequence.size() - 1).concat("Decorator");
 		
 		PizzaComponent[] pizzadec = new PizzaComponent[sequence.size()];
 		pizzadec[sequence.size() - 1] = (PizzaComponent) Class.forName(decoratorName.toLowerCase() + "." + decoratorName,true, ucl)
 				.getDeclaredConstructor(PizzaComponent.class).newInstance(new PizzaBasica());
 
 		for(int i = sequence.size()-2; i >= 0 ; i--) {
-			decoratorName = sequence.get(i).split("\\.")[0].concat("Decorator");
+			decoratorName = sequence.get(i).concat("Decorator");
 				pizzadec[i] = (PizzaComponent) Class.forName(decoratorName.toLowerCase() + "." + decoratorName ,true, ucl)
 											.getDeclaredConstructor(PizzaComponent.class).newInstance(pizzadec[i+1]);
 		}

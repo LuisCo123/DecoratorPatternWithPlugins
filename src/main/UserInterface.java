@@ -22,25 +22,26 @@ import javax.swing.JViewport;
 import thread.ThreadA;
 
 public class UserInterface extends JFrame implements ActionListener{
-	JPanel principalPanel;
-	JPanel prepareButtonPanel;
-	JPanel interfacePanel;
-	JPanel addRemoveButtonPanel;
-	JPanel upDownButtonPanel;
-	JScrollPane pluginsPane;
-	JScrollPane selectedPluginsPane;
-	JButton addBtn;
-	JButton removeBtn;
-	JButton upBtn;
-	JButton downBtn;
-	JButton prepareBtn;
-	JButton refreshBtn;
-	JList<String> availablePluginsList;
-	JList<String> selectedPluginsList;
-	DefaultListModel<String> modelAvailable;
-	DefaultListModel<String> modelSelected;
-	ArrayList<String> sequence;
-	ThreadA thread;
+	private JPanel principalPanel;
+	private JPanel prepareButtonPanel;
+	private JPanel interfacePanel;
+	private JPanel addRemoveButtonPanel;
+	private JPanel upDownButtonPanel;
+	private JScrollPane pluginsPane;
+	private JScrollPane selectedPluginsPane;
+	private JButton addBtn;
+	private JButton removeBtn;
+	private JButton upBtn;
+	private JButton downBtn;
+	private JButton prepareBtn;
+	private JButton refreshBtn;
+	private JList<String> availablePluginsList;
+	private JList<String> selectedPluginsList;
+	private DefaultListModel<String> modelAvailable;
+	private DefaultListModel<String> modelSelected;
+	private ArrayList<String> sequence;
+	private ThreadA thread;
+	
 	public UserInterface() {
 		this.setTitle("Pizzaria Armengue");
 		this.principalPanel = new JPanel(new BorderLayout());
